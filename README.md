@@ -1,4 +1,4 @@
 symfony-legacy-example
 ======================
 
-Example legacy application for a talk about integrating a legacy application with Symfony2
+Example legacy applications with Symfony2 integration for my talk *Tackling technical debt - breathe new life into a legacy project with Symfony2*

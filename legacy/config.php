@@ -9,6 +9,6 @@ $db_name = 'legacy_db';
 
 $session_name = 'legacy_sess';
 
-$baseUrl = 'site.php';
+$baseUrl = 'index.php';
 
 // ...

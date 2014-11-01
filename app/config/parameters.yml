@@ -16,3 +16,4 @@ parameters:
     debug_redirects: false
     use_assetic_controller: true
     legacy.site_index: %kernel.root_dir%/../legacy/index.php
+    legacy.path: %kernel.root_dir%/../legacy2/

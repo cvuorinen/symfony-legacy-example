@@ -1,0 +1,4 @@
+services:
+#    cvuorinen_legacy.example:
+#        class: Cvuorinen\LegacyBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

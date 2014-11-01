@@ -7,8 +7,13 @@
 {% block content %}
     <h1 class="title">Available demos</h1>
     <ul id="demo-list">
-        <li><a href="{{ path('_demo_hello', {'name': 'World'}) }}">Hello World</a></li>
+        <li><a href="{{ path('_demo_hello', {'name': 'November Camp'}) }}">Hello World</a></li>
         <li><a href="{{ path('_demo_secured_hello', {'name': 'World'}) }}">Access the secured area</a> <a href="{{ path('_demo_login') }}">Go to the login page</a></li>
         {# <li><a href="{{ path('_demo_contact') }}">Send a Message</a></li> #}
+    </ul>
+    <br/>
+    <h1 class="title">Legacy applications</h1>
+    <ul id="demo-list">
+        <li><a href="/home.html">Example legacy application</a></li>
     </ul>
 {% endblock %}

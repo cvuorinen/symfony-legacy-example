@@ -1,5 +1,0 @@
-_assetic:
-    resource: .
-    type: assetic
-_app:
-    resource: /media/extra/home/kalle/projects/symfony-path/app/config/routing_dev.yml

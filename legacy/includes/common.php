@@ -9,19 +9,21 @@ function StartSession($name) {
 }
 
 function get_body($path) {
-    return 'Page content';
+    global $basePath;
+    return '<img src="' . $basePath . 'images/legacy.jpg"/><br>'
+        . 'Image by  order_242  <a href="https://www.flickr.com/photos/juanelo242a/15393888991" target="_blank">www.flickr.com/photos/juanelo242a/15393888991</a>';
 }
 
 function get_heading($path) {
-    return 'Page heading';
+    return '';
 }
 
 function get_menu($path) {
     global $baseUrl;
     return '<ul>
-        <li><a href="' . $baseUrl . '/home.html">Home</a></li>
-        <li><a href="' . $baseUrl . '/user.html">User</a></li>
-        <li><a href="' . $baseUrl . '/dirs.html">Dir structure</a></li>
+        <li><a href="' . $baseUrl . 'home.html">Home</a></li>
+        <li><a href="' . $baseUrl . 'user.html">User</a></li>
+        <li><a href="' . $baseUrl . 'dirs.html">Dir structure</a></li>
     </ul>';
 }
 

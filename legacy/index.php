@@ -65,12 +65,12 @@ switch ($page) {
 }
 
 $content["sitetitle"] = "Example legacy application";
+$content["basepath"]  = $basePath;
 $content["heading"]   = $heading ? $heading : get_heading($path);
 $content["body"]      = $body;
 $content["sidebody"]  = $sidebody ? $sidebody : get_menu($path);
 
-// Choose template
-$html = print_template("templates/main.html",$content);
+$html = print_template("templates/main.html", $content);
 
 // Output page and headers
 print_page($html);

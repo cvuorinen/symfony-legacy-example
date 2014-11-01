@@ -2,20 +2,15 @@
 <html>
 <head>
     <title>##heading## - ##sitetitle##</title>
-    <style>
-        html, body {
-            height: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="##basepath##css/styles.css"/>
 </head>
 <body>
-    <table border="1" style="width: 90%; height: 90%;">
+    <table id="container">
         <tr><td colspan="2" id="header">
             <h2>##sitetitle##</h2>
-            <hr/>
         </td></tr>
         <tr>
-            <td id="sidebar" valign="top" style="width:200px;">
+            <td id="sidebar" valign="top">
                 ##sidebody##
             </td>
             <td id="content" valign="top">
@@ -24,7 +19,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2" id="footer" style="color: gray;">&copy; 2002</td>
+            <td colspan="2" id="footer">&copy; 2002</td>
         </tr>
     </table>
 </body>

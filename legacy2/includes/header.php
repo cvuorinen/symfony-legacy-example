@@ -84,7 +84,7 @@ echo '
 ' . $content_type . '
 ' . $page_title . '
 <style>
-    table.page { min-width: 700px; height: 400px; }
+    table.page { width: 700px; min-height: 400px; }
 </style>
 </head>
 <body>

@@ -12,6 +12,7 @@ require_once ("includes/common.php");
 // Load classes
 require_once ("classes/info.php");
 require_once ("classes/user.php");
+require_once ("classes/dir.php");
 // ...
 
 // Environment
@@ -52,7 +53,11 @@ switch ($page) {
             $body = $user->userInfo();
         }
         break;
-
+    case "dirs":
+        $dir = new Dir(__DIR__);
+        $heading = "Directory Structure";
+        $body = $dir->printTree();
+        break;
     // ...
 
     default:

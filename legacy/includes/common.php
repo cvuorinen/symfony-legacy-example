@@ -18,7 +18,11 @@ function get_heading($path) {
 
 function get_menu($path) {
     global $baseUrl;
-    return '<ul><li><a href="' . $baseUrl . '/user.html">User</a></li></ul>';
+    return '<ul>
+        <li><a href="' . $baseUrl . '/home.html">Home</a></li>
+        <li><a href="' . $baseUrl . '/user.html">User</a></li>
+        <li><a href="' . $baseUrl . '/dirs.html">Dir structure</a></li>
+    </ul>';
 }
 
 function isAdmin() {

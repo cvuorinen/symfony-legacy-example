@@ -7,7 +7,7 @@ if (!defined('LEGACY2_APP')) {
 // output page footer
 echo '
 </td></tr>
-<tr><td class="footer">
+<tr><td class="footer" colspan="2">
     <p style="color: gray;">&copy 2005</p>
 </td></tr></table>
 </div>

@@ -42,6 +42,7 @@ require_once('includes/functions.php');
 define('FILENAME_LOGIN',    'login.php');
 define('FILENAME_HOME',     'index.php');
 define('FILENAME_USER',     'user.php');
+define('FILENAME_DIRS',     'dirs.php');
 // ...
 
 // defines which files users are allowed to access
@@ -49,6 +50,8 @@ define('FILENAME_USER',     'user.php');
 $file_access = array(FILENAME_HOME => array('full_access'  => array(1, 3, 4),
                                             'limit_access' => array(5)),
                      FILENAME_USER => array('full_access'  => array(1, 3, 4),
+                                            'limit_access' => array(5)),
+                     FILENAME_DIRS => array('full_access'  => array(1, 3, 4),
                                             'limit_access' => array(5)),
 );
 
@@ -87,9 +90,12 @@ echo '
 <body>
 <div class="page" align="center">
 <table class="page" border="1" cellpadding="10">
-<tr><td class="header">
+<tr><td class="header" colspan="2">
   <h2 class="title">' . $site_title . '</h2>
-  <a href="user.php?id=' . $sess->getUserId() . '" style="float:right;">User</a>
-</td></tr><tr><td class="page">';
+</td></tr><tr><td width="20%" valign="top">
+    <ul><li><a href="' . FILENAME_HOME . '">Home</a></li>
+    <li><a href="' . FILENAME_USER . '?id=' . $sess->getUserId() . '">User</a></li>
+    <li><a href="' . FILENAME_DIRS . '">Dirs</a></li></ul>
+</td><td class="page">';
 
 ?>

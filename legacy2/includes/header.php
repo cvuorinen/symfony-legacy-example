@@ -4,6 +4,7 @@ if (!defined('LEGACY2_APP')) {
     die();
 }
 
+error_reporting(E_ERROR);
 ini_set('display_errors',0);
 
 /* configuration variables */
@@ -22,7 +23,8 @@ $site_title = 'Yet Another Example Legacy Application';
 require_once('includes/configuration.php');
 
 // get current file
-$current_file = basename($_SERVER['SCRIPT_NAME']);
+global $current_file;
+$current_file = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
 // include used classes
 require_once('includes/classes/session.php');
@@ -47,6 +49,7 @@ define('FILENAME_DIRS',     'dirs.php');
 
 // defines which files users are allowed to access
 // full_access and limit_access are arrays containing the user levels that have access to that file
+global $file_access;
 $file_access = array(FILENAME_HOME => array('full_access'  => array(1, 3, 4),
                                             'limit_access' => array(5)),
                      FILENAME_USER => array('full_access'  => array(1, 3, 4),

@@ -1,7 +1,7 @@
 <?php
 
 //if (!$DEBUG)
-//     error_reporting(E_ERROR);
+     error_reporting(E_ERROR);
      ini_set('display_errors',0);
 
 // Load configuration

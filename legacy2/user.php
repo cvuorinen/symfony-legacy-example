@@ -8,13 +8,13 @@ echo '
   <div class="content">
     <h1>User</h1>';
 
-if (isset($_POST['id'])) {
+if ($request->getMethod() == 'POST') {
     if (check_access() == 1) {
         // update user info
         $update_query  = "UPDATE user SET"
-                       . " firstname='" . $db->escape($_POST['firstname']) . "'"
-                       . ",lastname='" . $db->escape($_POST['lastname']) . "'";
-        $update_query .= " WHERE id=" . (int)$_POST['id'];
+                       . " firstname='" . $db->escape($request->request->get('firstname')) . "'"
+                       . ",lastname='" . $db->escape($request->request->get('lastname')) . "'";
+        $update_query .= " WHERE id=" . (int)$request->request->get('id');
 
         if ($db->query($update_query))
         {
@@ -36,10 +36,10 @@ if ($message) {
 }
 
 // if id set, show details
-if ($_GET['id']) {
+if ($request->query->get('id')) {
     echo '<form method="post">';
 
-    $user = $db->select("SELECT * FROM user WHERE id=" . (int)$_GET['id']);
+    $user = $db->select("SELECT * FROM user WHERE id=" . (int)$request->query->get('id'));
 
     echo '<p><strong>Id:</strong> ' . $user['id'] . '</p><input type="hidden" name="id" value="' . $user['id'] . '">';
     echo '<p><strong>Firstname:</strong> <input type="text" name="firstname" value="' . $user['firstname'] . '"/></p>';

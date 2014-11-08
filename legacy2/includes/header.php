@@ -7,6 +7,13 @@ if (!defined('LEGACY2_APP')) {
 error_reporting(E_ERROR);
 ini_set('display_errors',0);
 
+// Make Symfony Container and Request global so they can be used in other functions & classes
+/** @var \Symfony\Component\DependencyInjection\ContainerInterface $container */
+$GLOBALS['container'] = $container;
+
+/** @var Symfony\Component\HttpFoundation\Request $request */
+$GLOBALS['request'] = $request;
+
 /* configuration variables */
 
 // number of rows per page shown in listings
@@ -24,7 +31,7 @@ require_once('includes/configuration.php');
 
 // get current file
 global $current_file;
-$current_file = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+$current_file = basename(parse_url($request->getRequestUri(), PHP_URL_PATH));
 
 // include used classes
 require_once('includes/classes/session.php');

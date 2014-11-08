@@ -4,6 +4,13 @@
      error_reporting(E_ERROR);
      ini_set('display_errors',0);
 
+// Make Symfony Container and Request global so they can be used in other functions & classes
+/** @var \Symfony\Component\DependencyInjection\ContainerInterface $container */
+$GLOBALS['container'] = $container;
+
+/** @var Symfony\Component\HttpFoundation\Request $request */
+$GLOBALS['request'] = $request;
+
 // Load configuration
 require_once ("config.php");
 require_once ("includes/funcs.php");
@@ -16,11 +23,11 @@ require_once ("classes/dir.php");
 // ...
 
 // Environment
-$path = set_path($_SERVER['REQUEST_URI']);
+$path = set_path($request->getRequestUri());
 $page = $path[count($path)-1];
 
-$id = isset($_REQUEST['id']) ? $_REQUEST['id'] : null;
-$action = $_REQUEST['action'];
+$id = $request->query->get('id', null);
+$action = $request->query->get('action');
 
 # Connect to database
 $dbh=mysql_connect($db_host,$db_user,$db_pass);

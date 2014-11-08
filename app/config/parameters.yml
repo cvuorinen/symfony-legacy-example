@@ -17,3 +17,4 @@ parameters:
     use_assetic_controller: true
     legacy.site_index: %kernel.root_dir%/../legacy/index.php
     legacy.path: %kernel.root_dir%/../legacy2/
+    legacy.session.name: legacy_sess

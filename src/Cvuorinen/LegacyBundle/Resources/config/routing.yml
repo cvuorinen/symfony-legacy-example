@@ -1,0 +1,3 @@
+_legacy:
+    resource: "@CvuorinenLegacyBundle/Controller/LegacyController.php"
+    type:     annotation

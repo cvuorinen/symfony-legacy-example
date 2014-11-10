@@ -1,0 +1,2 @@
+_cvuorinen_legacy:
+    resource: "@CvuorinenLegacyBundle/Resources/config/routing.yml"

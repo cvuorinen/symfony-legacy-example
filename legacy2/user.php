@@ -12,7 +12,8 @@ if (isset($_POST['id'])) {
     if (check_access() == 1) {
         // update user info
         $update_query  = "UPDATE user SET"
-                       . " name='" . $db->escape($_POST['name']) . "'";
+                       . " firstname='" . $db->escape($_POST['firstname']) . "'"
+                       . ",lastname='" . $db->escape($_POST['lastname']) . "'";
         $update_query .= " WHERE id=" . (int)$_POST['id'];
 
         if ($db->query($update_query))
@@ -41,7 +42,8 @@ if ($_GET['id']) {
     $user = $db->select("SELECT * FROM user WHERE id=" . (int)$_GET['id']);
 
     echo '<p><strong>Id:</strong> ' . $user['id'] . '</p><input type="hidden" name="id" value="' . $user['id'] . '">';
-    echo '<p><strong>Name:</strong> <input type="text" name="name" value="' . $user['name'] . '"/></p>';
+    echo '<p><strong>Firstname:</strong> <input type="text" name="firstname" value="' . $user['firstname'] . '"/></p>';
+    echo '<p><strong>Lastname:</strong> <input type="text" name="lastname" value="' . $user['lastname'] . '"/></p>';
     echo '<input type="submit" value="Submit"><p><br/></p>';
 
     echo '</form>';

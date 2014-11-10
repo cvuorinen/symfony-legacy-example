@@ -1,16 +1,16 @@
 <?php
 
-// mock db class
 class Db
 {
     public function __construct()
     {
-        // normally connect here, this is just a mock class
+        mysql_connect(CONF_DB_HOSTS, CONF_DB_USER, CONF_DB_PW);
+        mysql_select_db(CONF_DB_NAME);
     }
 
     public function query($sql)
     {
-        return false;
+        return mysql_query($sql);
     }
 
     public function escape($param)
@@ -20,9 +20,6 @@ class Db
 
     public function select($sql)
     {
-        return array(
-            'id' => 1,
-            'name' => 'Testy McTesterson',
-        );
+        return mysql_fetch_array(mysql_query($sql));
     }
 }

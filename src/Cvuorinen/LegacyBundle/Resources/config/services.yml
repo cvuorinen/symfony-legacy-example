@@ -1,4 +1,12 @@
 services:
-#    cvuorinen_legacy.example:
-#        class: Cvuorinen\LegacyBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    # Legacy kernel
+    cvuorinen_legacy.legacy_kernel:
+        class: Cvuorinen\LegacyBundle\Kernel\LegacyKernel
+        arguments: [%legacy.site_index%, @service_container]
+
+    # Event listeners
+    cvuorinen_legacy.listener.legacy_kernel_listener:
+        class: Cvuorinen\LegacyBundle\EventListener\LegacyKernelListener
+        arguments: [@cvuorinen_legacy.legacy_kernel]
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }

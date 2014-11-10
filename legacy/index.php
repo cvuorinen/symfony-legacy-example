@@ -1,7 +1,7 @@
 <?php
 
 //if (!$DEBUG)
-//     error_reporting(E_ERROR);
+     error_reporting(E_ERROR);
      ini_set('display_errors',0);
 
 // Load configuration
@@ -28,6 +28,9 @@ mysql_select_db($db_name,$dbh);
 
 $info = new Info();
 
+global $user_id;
+global $session;
+global $USERINFO;
 $user_id = null;
 $session = null;
 $USERINFO = null;

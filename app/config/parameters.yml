@@ -3,7 +3,7 @@ parameters:
     database_driver: pdo_mysql
     database_host: 127.0.0.1
     database_port: null
-    database_name: symfony
+    database_name: legacy_db
     database_user: root
     database_password: null
     mailer_transport: smtp
@@ -17,3 +17,4 @@ parameters:
     use_assetic_controller: true
     legacy.site_index: %kernel.root_dir%/../legacy/index.php
     legacy.path: %kernel.root_dir%/../legacy2/
+    legacy.session.name: legacy_sess

@@ -3,7 +3,7 @@ parameters:
     database_driver:   pdo_mysql
     database_host:     127.0.0.1
     database_port:     ~
-    database_name:     symfony
+    database_name:     legacy_db
     database_user:     root
     database_password: ~
     # You should uncomment this if you want use pdo_sqlite
@@ -22,3 +22,8 @@ parameters:
     debug_toolbar:          true
     debug_redirects:        false
     use_assetic_controller: true
+
+    # Legacy app configs
+    legacy.site_index: %kernel.root_dir%/../legacy/index.php
+    legacy.path: %kernel.root_dir%/../legacy2/
+    legacy.session.name: legacy_sess

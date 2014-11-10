@@ -28,7 +28,9 @@ function get_menu($path) {
 }
 
 function isAdmin() {
-    return false;
+    global $user_id;
+
+    return Info::getUsername($user_id) == 'admin';
 }
 
 function noAccess() {

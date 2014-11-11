@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Example legacy application{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="/css/styles.css" />
+    {% endblock %}
+</head>
+<body>
+<table id="container">
+    <tr><td colspan="2" id="header">
+            <h2>{% block sitetitle %}Example legacy application{% endblock %}</h2>
+        </td></tr>
+    <tr>
+        <td id="sidebar" valign="top">
+            {% block sidebar %}{% endblock %}
+        </td>
+        <td id="content" valign="top">
+            {% block body %}{% endblock %}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" id="footer">&copy; 2002</td>
+    </tr>
+</table>
+</body>
+</html>

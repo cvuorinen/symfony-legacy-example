@@ -4,8 +4,10 @@ function StartSession($name) {
     global $user_id;
     $user_id = 1;
 
-    session_name($name);
-    session_start();
+    $session = $GLOBALS['container']->get('session');
+
+    $session->set('user_id', $user_id);
+    $session->set('username', 'admin');
 }
 
 function get_body($path) {

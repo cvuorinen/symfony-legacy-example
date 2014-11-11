@@ -45,6 +45,9 @@ $USERINFO = null;
 // Start session and login
 StartSession($session_name);
 
+if ($action=='login')
+    login();
+
 // logout
 if ($action=='logout')
     $session->logout();
@@ -75,6 +78,10 @@ switch ($page) {
 
     default:
         $body = get_body($path);
+
+        if (!isLoggedIn()) {
+            $body = get_login_form() . $body;
+        }
 }
 
 $content["sitetitle"] = "Example legacy application";

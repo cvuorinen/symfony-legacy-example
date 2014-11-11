@@ -9,6 +9,7 @@ $db_name = $container->getParameter('database_name');
 
 $session_name = $container->getParameter('legacy.session.name');
 
+global $basePath;
 $basePath = dirname($_SERVER['PHP_SELF']);
 if (substr($basePath, -9) == 'index.php') {
     $basePath = substr($basePath, 0, -9);

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0f5bf28fac35560dbdb2e597d32df056",
+    "hash": "ab9c86c581fa15da7d42ebe248b2230f",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -425,6 +425,65 @@
             "time": "2013-03-25 20:13:59"
         },
         {
+            "name": "doctrine/doctrine-migrations-bundle",
+            "version": "dev-master",
+            "target-dir": "Doctrine/Bundle/MigrationsBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/DoctrineMigrationsBundle.git",
+                "reference": "81575a4316951125ce408c70f30547c77d98f78a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/DoctrineMigrationsBundle/zipball/81575a4316951125ce408c70f30547c77d98f78a",
+                "reference": "81575a4316951125ce408c70f30547c77d98f78a",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/doctrine-bundle": "~1.0",
+                "doctrine/migrations": "~1.0@dev",
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "~2.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Bundle\\MigrationsBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Doctrine Project",
+                    "homepage": "http://www.doctrine-project.org"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony DoctrineMigrationsBundle",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "dbal",
+                "migrations",
+                "schema"
+            ],
+            "time": "2014-08-17 07:53:47"
+        },
+        {
             "name": "doctrine/inflector",
             "version": "v1.0",
             "source": {
@@ -539,6 +598,64 @@
                 "parser"
             ],
             "time": "2013-01-12 18:59:04"
+        },
+        {
+            "name": "doctrine/migrations",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/migrations.git",
+                "reference": "f4fe9d9cc21a711d89d91d29c4a4e7945289cdd0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/f4fe9d9cc21a711d89d91d29c4a4e7945289cdd0",
+                "reference": "f4fe9d9cc21a711d89d91d29c4a4e7945289cdd0",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "~2.0",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "symfony/console": "2.*",
+                "symfony/yaml": "2.*"
+            },
+            "suggest": {
+                "symfony/console": "to run the migration from the console"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\DBAL\\Migrations": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                }
+            ],
+            "description": "Database Schema migrations using Doctrine DBAL",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "database",
+                "migrations"
+            ],
+            "time": "2014-10-30 14:49:25"
         },
         {
             "name": "doctrine/orm",
@@ -901,17 +1018,17 @@
         },
         {
             "name": "sensio/distribution-bundle",
-            "version": "v3.0.7",
+            "version": "v3.0.8",
             "target-dir": "Sensio/Bundle/DistributionBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
-                "reference": "3d7b900225882063cf179ce1d41bb8b1450a5a17"
+                "reference": "bc5e96bb4faf6bee7121085951d11b89488952f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/3d7b900225882063cf179ce1d41bb8b1450a5a17",
-                "reference": "3d7b900225882063cf179ce1d41bb8b1450a5a17",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/bc5e96bb4faf6bee7121085951d11b89488952f5",
+                "reference": "bc5e96bb4faf6bee7121085951d11b89488952f5",
                 "shasum": ""
             },
             "require": {
@@ -950,21 +1067,21 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2014-10-01 06:52:36"
+            "time": "2014-11-03 21:16:34"
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v3.0.2",
+            "version": "v3.0.3",
             "target-dir": "Sensio/Bundle/FrameworkExtraBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "9b22aaee517e80aad3238ea0328458b6f964066f"
+                "reference": "b829a8097a41ccbd7d35683b1750043b23d682f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/9b22aaee517e80aad3238ea0328458b6f964066f",
-                "reference": "9b22aaee517e80aad3238ea0328458b6f964066f",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/b829a8097a41ccbd7d35683b1750043b23d682f5",
+                "reference": "b829a8097a41ccbd7d35683b1750043b23d682f5",
                 "shasum": ""
             },
             "require": {
@@ -1005,7 +1122,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2014-09-02 07:11:30"
+            "time": "2014-11-10 14:50:31"
         },
         {
             "name": "sensiolabs/security-checker",
@@ -1399,25 +1516,31 @@
         },
         {
             "name": "twig/extensions",
-            "version": "v1.1.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fabpot/Twig-extensions.git",
-                "reference": "c0ab818595338dd5569369bfce2552d02cec5d50"
+                "url": "https://github.com/twigphp/Twig-extensions.git",
+                "reference": "8cf4b9fe04077bd54fc73f4fde83347040c3b8cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/c0ab818595338dd5569369bfce2552d02cec5d50",
-                "reference": "c0ab818595338dd5569369bfce2552d02cec5d50",
+                "url": "https://api.github.com/repos/twigphp/Twig-extensions/zipball/8cf4b9fe04077bd54fc73f4fde83347040c3b8cd",
+                "reference": "8cf4b9fe04077bd54fc73f4fde83347040c3b8cd",
                 "shasum": ""
             },
             "require": {
                 "twig/twig": "~1.12"
             },
+            "require-dev": {
+                "symfony/translation": "~2.3"
+            },
+            "suggest": {
+                "symfony/translation": "Allow the time_diff output to be translated"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "1.2.x-dev"
                 }
             },
             "autoload": {
@@ -1432,18 +1555,16 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
+                    "email": "fabien@symfony.com"
                 }
             ],
             "description": "Common additional features for Twig that do not directly belong in core",
-            "homepage": "https://github.com/fabpot/Twig-extensions",
+            "homepage": "http://twig.sensiolabs.org/doc/extensions/index.html",
             "keywords": [
                 "i18n",
                 "text"
             ],
-            "time": "2014-07-05 10:01:35"
+            "time": "2014-10-30 14:30:03"
         },
         {
             "name": "twig/twig",
@@ -1555,7 +1676,10 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "doctrine/migrations": 20,
+        "doctrine/doctrine-migrations-bundle": 20
+    },
     "prefer-stable": false,
     "platform": {
         "php": ">=5.3.3"

@@ -68,6 +68,9 @@ switch ($page) {
         $heading = "Directory Structure";
         $body = $dir->printTree();
         break;
+    case "menu":
+        $html = get_menu($path);
+        break;
     // ...
 
     default:
@@ -80,7 +83,9 @@ $content["heading"]   = $heading ? $heading : get_heading($path);
 $content["body"]      = $body;
 $content["sidebody"]  = $sidebody ? $sidebody : get_menu($path);
 
-$html = print_template("templates/main.html", $content);
+if (!isset($html)) {
+    $html = print_template("templates/main.html", $content);
+}
 
 // Output page and headers
 print_page($html);

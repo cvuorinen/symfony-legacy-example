@@ -13,7 +13,9 @@
         </td></tr>
     <tr>
         <td id="sidebar" valign="top">
-            {% block sidebar %}{% endblock %}
+            {% block sidebar %}
+                {{ render(url('_legacy_example', {filename: 'menu'})) }}
+            {% endblock %}
         </td>
         <td id="content" valign="top">
             {% block body %}{% endblock %}

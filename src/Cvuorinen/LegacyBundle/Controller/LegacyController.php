@@ -44,4 +44,14 @@ class LegacyController extends Controller
 
         return $response;
     }
+
+    /**
+     * @Route("/{filename}.html", name="_legacy_example")
+     */
+    public function legacyMenuAction(Request $request)
+    {
+        $legacyKernel = $this->container->get('cvuorinen_legacy.legacy_kernel');
+
+        return $legacyKernel->handle($request);
+    }
 }

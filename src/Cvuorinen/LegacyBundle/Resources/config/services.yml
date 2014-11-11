@@ -10,3 +10,12 @@ services:
         arguments: [@cvuorinen_legacy.legacy_kernel]
         tags:
             - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+
+    # User provider (for authenticator)
+    cvuorinen_legacy.user_provicer:
+        class: Cvuorinen\LegacyBundle\Security\LegacyUserProvider
+
+    # Authenticator
+    cvuorinen_legacy.legacy_authenticator:
+        class:     Cvuorinen\LegacyBundle\Security\LegacyAuthenticator
+        arguments: ["@cvuorinen_legacy.user_provicer"]

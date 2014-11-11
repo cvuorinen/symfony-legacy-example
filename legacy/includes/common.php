@@ -20,10 +20,13 @@ function get_heading($path) {
 
 function get_menu($path) {
     global $baseUrl;
+    $router = $GLOBALS['container']->get('router');
+
     return '<ul>
         <li><a href="' . $baseUrl . 'home.html">Home</a></li>
         <li><a href="' . $baseUrl . 'user.html">User</a></li>
         <li><a href="' . $baseUrl . 'dirs.html">Dir structure</a></li>
+        <li><a href="' . $router->generate('_demo') . '">Demo Home</a></li>
     </ul>';
 }
 

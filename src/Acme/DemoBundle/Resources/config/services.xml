@@ -14,5 +14,12 @@
             <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController" />
             <argument type="service" id="twig.extension.acme.demo" />
         </service>
+
+        <service id="acme.demo.repository.user"
+                 class="Acme\DemoBundle\Entity\Repository\UserRepository"
+                 factory-service="doctrine.orm.default_entity_manager"
+                 factory-method="getRepository">
+            <argument>Acme\DemoBundle\Entity\User</argument>
+        </service>
     </services>
 </container>

@@ -4,10 +4,11 @@ class Info
 {
     function getUsername($id)
     {
-        $sql = "SELECT username FROM user WHERE id=" . (int)$id;
-        $result = mysql_fetch_array(mysql_query($sql));
+        global $container;
+        $userRepository = $container->get('acme.demo.repository.user');
+        $user = $userRepository->find($id);
 
-        return $result[0];
+        return $user->getUsername();
     }
 }
  

@@ -4,6 +4,9 @@ class User
 {
     function User($user_id)
     {
+        $this->twig = $GLOBALS['container']->get('twig');
+        $this->userRepository = $GLOBALS['container']->get('acme.demo.repository.user');
+
         $this->keyvalue = $user_id;
 
         if (is_int($this->keyvalue)) {
@@ -15,38 +18,37 @@ class User
     {
         global $baseUrl;
 
-        $html = '<p><strong>Id:</strong> ' . $this->keyvalue . '</p>';
-        $html .= '<p><strong>Name:</strong> ' . $this->firstname . ' ' . $this->lastname . '</p>';
-        if (isAdmin()) {
-            $html .= '<h3>Actions:</h3>';
-            $html .= '<a href="' . $baseUrl . '?action=edit&page=/user.html">Edit</a>';
-        }
+        $data = [
+            'user' => $this->user,
+            'isAdmin' => isAdmin(),
+            'baseUrl' => $baseUrl
+        ];
 
-        return $html;
+        return $this->twig->render(
+            'CvuorinenLegacyBundle:User:info.html.twig',
+            $data
+        );
     }
 
     function editUser()
     {
-        $html = '<form method="post">';
+        global $request;
 
-        $html .=  '<p><strong>Id:</strong> ' . $this->id . '</p><input type="hidden" name="id" value="' . $this->id . '">';
-        $html .= '<p><strong>Firstname:</strong> <input type="text" name="firstname" value="' . $this->firstname . '"/></p>';
-        $html .= '<p><strong>Lastname:</strong> <input type="text" name="lastname" value="' . $this->lastname . '"/></p>';
-        $html .= '<input type="submit" value="Submit"><p><br/></p>';
+        if ($request->getMethod() == 'POST') {
+            $this->user->setFirstname($request->request->get('firstname'));
+            $this->user->setLastname($request->request->get('lastname'));
 
-        $html .= '</form>';
+            $this->userRepository->save($this->user);
+        }
 
-        return $html;
+        return $this->twig->render(
+            'CvuorinenLegacyBundle:User:edit.html.twig',
+            ['user' => $this->user]
+        );
     }
 
     function loadData()
     {
-        $sql = "SELECT * FROM user WHERE id=" . (int)$this->keyvalue;
-        $result = mysql_fetch_array(mysql_query($sql));
-
-        foreach ($result as $key => $value) {
-            $this->$key = $value;
-        }
+        $this->user = $this->userRepository->find($this->keyvalue);
     }
 }
- 

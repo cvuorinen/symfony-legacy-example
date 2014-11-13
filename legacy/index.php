@@ -61,9 +61,9 @@ switch ($page) {
             if (!isAdmin())
                 noAccess();
 
-            $body = $user->editUser();
+            $html = $user->editUser();
         } else {
-            $body = $user->userInfo();
+            $html = $user->userInfo();
         }
         break;
     case "dirs":

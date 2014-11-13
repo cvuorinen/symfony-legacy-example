@@ -1,0 +1,12 @@
+{% extends "CvuorinenLegacyBundle::layout.html.twig" %}
+
+{% block body %}
+    <form method="post">
+
+    <p><strong>Id:</strong> {{ user.getId() }}</p><input type="hidden" name="id" value="{{ user.getId() }}">
+    <p><strong>Firstname:</strong> <input type="text" name="firstname" value="{{ user.getFirstname() }}"/></p>
+    <p><strong>Lastname:</strong> <input type="text" name="lastname" value="{{ user.getLastname() }}"/></p>
+    <input type="submit" value="Submit"><p><br/></p>
+
+    </form>
+{% endblock %}
